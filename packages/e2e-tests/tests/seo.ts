@@ -6,3 +6,10 @@ export const shouldHavePageTitle = (options: { pageTitle: string }) => {
     await expect(page).toHaveTitle(options.pageTitle);
   });
 };
+
+export const clickContactButton = () => {
+  return test("button clicked", async ({ page }) => {
+    await page.goto("/contact");
+    await page.getByTestId("contact-button");
+  });
+};
